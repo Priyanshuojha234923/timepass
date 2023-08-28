@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Alogin";
+    Layout = "~/Views/Shared/adminmaster.cshtml";
+}
+
+<link href="~/Content/css/NOTICE.CSS" rel="stylesheet" />
+<body style="background:linear-gradient(#141e30, #243b55)">
+<div class="login-box">
+    <h2>ADD NEWLOGIN</h2>
+    <form action="/admin/ALOGIN" method="post">
+        <div class="user-box">
+            <input type="text" name="LOGIN" required="" autocomplete="off">
+            <label> USER NAME</label>
+        </div>
+        <div class="user-box">
+            <input type="text" name="PASSWORD" required="" autocomplete="off">
+            <label>PASSWORD</label>
+        </div>
+        <input type="submit" class="form-control " value="ADD NEW USERNAME" style="background-color: #7D0552" />
+    </form>
+    <br />
+
+</div>
+
+</body>

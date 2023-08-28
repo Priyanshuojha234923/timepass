@@ -1,0 +1,45 @@
+﻿@{
+    ViewBag.Title = "ulogin";
+    Layout = "~/Views/Shared/adminmaster.cshtml";
+}
+
+<link href="~/Content/css/NOTICE.CSS" rel="stylesheet" />
+<body style="background:linear-gradient(#141e30, #243b55)">
+<div class="login-box">
+    <h2>UPDATE LOGIN</h2>
+    <form action="/admin/ulogin" method="post">
+        <div class="user-box">
+            <input type="text" name="Uname"  required="" autocomplete="off">
+            <label>USER NAME</label>
+        </div>
+        <div class="user-box">
+            <input type="text" name="OPASS" required="" autocomplete="off">
+            <label>OLD PASSWORD</label>
+        </div>
+       
+        <div class="user-box">
+            <input type="text" name="NPASS" required="" autocomplete="off">
+            <label>NEW PASSWORD</label>
+        </div>
+        <div class="user-box">
+            <input type="text" name="CNPASS"  required="" autocomplete="off">
+            <label>CONFIRM NEW PASSWORD</label>
+        </div>
+        <div class="user-box">
+            <input type="hidden" name="sr"  required="" autocomplete="off">
+
+        </div>
+        <input type="submit" class="form-control " value="UPDATE PASSWORD" style="background-color: #7D0552" />
+    </form>
+    <br />
+    <center>
+    <div class="stage"><a class="btn" href="/ADMIN/uuser" style="color:white;border:1px solid white">EDIT USERNAME</a></div>
+    
+        </center>
+        
+
+          
+        
+   
+</div>
+    </body>

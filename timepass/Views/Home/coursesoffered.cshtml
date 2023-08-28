@@ -1,0 +1,80 @@
+﻿@{
+    ViewBag.Title = "coursesoffered";
+    Layout = "~/Views/Shared/GeneralMaster.cshtml";
+}
+
+@using System.Data;
+@using System.Data.SqlClient;
+@using timepass.Models;
+<style>
+    .course a:hover{
+        color:red;
+    }
+</style>
+
+<div class="container-fluid">
+   
+        <div class="row" >
+            <center>
+         
+                <div style="min-height: 200px; width: 98%; text-align: justify; border-bottom-right-radius: 50px; background-color:white; border-top-left-radius: 50px;box-shadow:4px 4px 4px 4px grey">
+                    <div class="row course" style="background:#3a3b3c;max-height:80px;width:100%;text-align:center;padding:0.5%;margin-top:10px;border-top-left-radius:50px;color:white;margin-left:0px"><h2><strong><a>Courses Offered</a></strong></h2></div>
+                    <span class="" style="font-size: 140%; font-family: 'Bell MT'">
+                        At present three Diploma Courses are being offered by this institution.All the above courses are recognised by the U.P. Government and approved by the All India Council for Technical Education (AICTE).
+                        AICTE is an apex body constituted by the Government of India for granting approval to the Technical Institutions of all the levels i.e. Diploma,
+                        Degree and Post Graduate and Monitoring the working of all such Technical Institutions within the Country.
+                    </span>
+                    <div class="table-responsive" style=" margin-bottom: 30px;margin-top:20px;text-align:center">
+                        <table class=" table table-hover table-bordered">
+
+                            <div style="background-color: #3a3b3c"><h4 style="color:white;padding:5px"><strong>Diploma Courses offered by Government Polytechnic Premdhar Patti, Pratapgarh</strong></h4></div>
+
+                            <thead>
+
+                            <th><strong>Name of the course</strong></th>
+                            <th><strong>Total Seats</strong></th>
+                            <th><strong>Req. Qualification</strong></th>
+                            <th><strong>Duration</strong> </th>
+
+                            </thead>
+
+                            @{
+                                string cmd = "select * from Course";
+                                DBmanager db = new DBmanager();
+                                DataTable dt = db.GetAllRecords(cmd);
+                                if (dt.Rows.Count > 0)
+                                {
+                                    int c = 1;
+                                    for (int i = 0; i < dt.Rows.Count; i++)
+                                    {
+                                        <tr style="font-family:Bahnschrift;font-style:italic;text-transform:uppercase">
+
+                                            <td>@dt.Rows[i]["Name"]</td>
+                                            <td>@dt.Rows[i]["course"]</td>
+                                            <td>@dt.Rows[i]["qualification"]</td>
+                                            <td>@dt.Rows[i]["Duration"]</td>
+
+
+                                        </tr>
+                                    }
+                                    c++;
+                                }
+                            }
+                        </table>
+                    </div>
+
+                </div>
+
+
+
+            </center>
+
+
+      
+
+        </div>
+   
+</div>
+    
+
+

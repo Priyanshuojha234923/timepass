@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "ADDSTAFF";
+    Layout = "~/Views/Shared/adminmaster.cshtml";
+}
+
+<link href="~/Content/css/NOTICE.CSS" rel="stylesheet" />
+<body style="background:linear-gradient(#141e30, #243b55)">
+<div class="login-box">
+    <h2>ADD STAFF</h2>
+    <form action="/admin/addstaff" method="post" enctype="multipart/form-data">
+        <div class="user-box">
+            <input type="text" name="NAME" required="" autocomplete="off">
+            <label>NAME</label>
+        </div>
+        <div class="#">
+            <label style="color:white">DEPARTMENT OF/DESIGNATION</label>
+            <select id="DESIGNATION" name="DESIGNATION">
+                <option value="select">Select</option>
+                <option value="PRINCIPAL">PRINCIPAL</option>
+                <option value="Computer Science And Engineering">Computer Science And Engineering</option>
+                <option value="Civil Engineering">Civil Engineering</option>
+                <option value="Electrical & Electronics Engineering">Electrical & Electronics Engineering</option>
+                <option value="Applied Science">Applied Science</option>
+                <option value="Other Staff">Other Staff</option>
+                <option value="Guest Lecturer">Guest Lecturer</option>
+            </select>
+            
+        </div>
+     <!---
+          <div class="user-box">
+            <input type="text" name="QUALIFICATION" required="" autocomplete="off">
+            <label>QUALIFICATION</label>
+        </div>
+        <div class="user-box">
+            <input type="text" name="EMAIL" required="" autocomplete="off">
+            <label>EMAIL</label>
+        </div>
+         -->  
+        <input type="submit" class="form-control " value="ADD STAFF" style="background-color: #7D0552;margin-top:20px" />
+    </form>
+</div>

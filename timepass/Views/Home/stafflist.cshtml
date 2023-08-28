@@ -1,0 +1,250 @@
+﻿@{
+    ViewBag.Title = "stafflist";
+    Layout = "~/Views/Shared/GeneralMaster.cshtml";
+}
+
+@using System.Data;
+@using System.Data.SqlClient;
+@using timepass.Models;
+
+
+
+
+<div class="container-fluid">
+
+    <div class="row">
+        <center>
+            
+            <div style="min-height: 200px; width: 98%; text-align: center; border-bottom-right-radius: 50px; box-shadow: 3px 4px 2px 4px grey; border-top-left-radius: 50px;">
+                <div class="row course" style="background: #3a3b3c; max-height: 80px; width:100%; text-align: center; padding: 0.5%; margin-top: 10px; border-top-left-radius: 50px; color: white;margin-left:0px"><h2><strong><a>STAFF LIST</a></strong></h2></div>
+                <div class="table-responsive" style="text-align:center;text-transform:uppercase">
+                    <table class=" table table-hover table-bordered">
+                        <h3>Principal</h3>
+
+                        @{
+                            string cmd = "select * from stafflist where designation='PRINCIPAL'";
+                            DBmanager db = new DBmanager();
+                            DataTable dt = db.GetAllRecords(cmd);
+                            if (dt.Rows.Count > 0)
+                            {
+                                for (int i = 0; i < dt.Rows.Count; i++)
+                                {
+                                    <tr style="font-family:Bahnschrift;font-style:italic;text-transform:uppercase">
+
+                                        <td>@dt.Rows[i]["name"]</td>
+
+
+
+
+                                    </tr>
+                                }
+                            }
+                            else
+                            {
+                                <span>
+                                    No Faculity Availble
+                                </span>
+                            }
+                        }
+                    </table>
+                    <table class=" table table-hover table-bordered">
+                        <h3>Lecturer in Computer science</h3>
+
+                        @{
+                            string cmd1 = "select * from stafflist where designation='Computer Science And Engineering'";
+                            DBmanager db1 = new DBmanager();
+                            DataTable dt1 = db.GetAllRecords(cmd1);
+                            if (dt1.Rows.Count > 0)
+                            {
+                                for (int i = 0; i < dt1.Rows.Count; i++)
+                                {
+                                    <tr style="font-family:Bahnschrift;font-style:italic;text-transform:uppercase">
+
+                                        <td>@dt1.Rows[i]["name"]</td>
+
+
+
+
+                                    </tr>
+                                }
+                            }
+                            else
+                            {
+                                <span>
+                                    No Faculity Availble
+                                </span>
+                            }
+                        }
+                    </table>
+                    <table class=" table table-hover table-bordered">
+                        <h3>Lecturer in Civil Engineering</h3>
+
+                        @{
+                            string cmd2 = "select * from stafflist where designation='Civil Engineering'";
+                            DBmanager db2 = new DBmanager();
+                            DataTable dt2 = db.GetAllRecords(cmd2);
+                            if (dt2.Rows.Count > 0)
+                            {
+                                for (int i = 0; i < dt2.Rows.Count; i++)
+                                {
+                                    <tr style="font-family:Bahnschrift;font-style:italic;text-transform:uppercase">
+
+                                        <td>@dt2.Rows[i]["name"]</td>
+
+
+
+
+                                    </tr>
+                                }
+                            }
+                            else
+                            {
+                                <span>
+                                    No Faculity Availble
+                                </span>
+                            }
+                        }
+
+
+
+                    </table>
+                    <table class=" table table-hover table-bordered">
+                        <h3>Lecturer in Electrical & Electronics Engineering</h3>
+
+                        @{
+                            string cmd3 = "select * from stafflist where designation='Electrical & Electronics Engineering'";
+                            DBmanager db3 = new DBmanager();
+                            DataTable dt3 = db.GetAllRecords(cmd3);
+                            if (dt3.Rows.Count > 0)
+                            {
+                                for (int i = 0; i < dt3.Rows.Count; i++)
+                                {
+                                    <tr style="font-family:Bahnschrift;font-style:italic;text-transform:uppercase">
+
+                                        <td>@dt3.Rows[i]["name"]</td>
+
+
+
+
+                                    </tr>
+                                }
+                            }
+                            else
+                            {
+                                <span>
+                                    No Faculity Availble
+                                </span>
+                            }
+                        }
+
+
+
+                    </table>
+                    <table class=" table table-hover table-bordered">
+                        <h3>Lecturer in Applied Science</h3>
+
+                        @{
+                            string cmd4 = "select * from stafflist where designation='Applied Science'";
+                            DBmanager db4 = new DBmanager();
+                            DataTable dt4 = db.GetAllRecords(cmd4);
+                            if (dt4.Rows.Count > 0)
+                            {
+                                for (int i = 0; i < dt4.Rows.Count; i++)
+                                {
+                                    <tr style="font-family:Bahnschrift;font-style:italic;text-transform:uppercase">
+
+                                        <td>@dt4.Rows[i]["name"]</td>
+
+
+
+
+                                    </tr>
+                                }
+                            }
+                            else
+                            {
+                                <span>
+                                    No Faculity Availble
+                                </span>
+                            }
+                        }
+
+
+
+                    </table>
+                    <table class=" table table-hover table-bordered">
+                        <h3>Other Staff</h3>
+
+                        @{
+                            string cmd5 = "select * from stafflist where designation='Other Staff'";
+                            DBmanager db5 = new DBmanager();
+                            DataTable dt5 = db.GetAllRecords(cmd5);
+                            if (dt5.Rows.Count > 0)
+                            {
+                                for (int i = 0; i < dt5.Rows.Count; i++)
+                                {
+                                    <tr style="font-family:Bahnschrift;font-style:italic;text-transform:uppercase">
+
+                                        <td>@dt5.Rows[i]["name"]</td>
+
+
+
+
+                                    </tr>
+                                }
+                            }
+                            else
+                            {
+                                <span>
+                                    No Faculity Availble
+                                </span>
+                            }
+                        }
+
+
+
+                    </table>
+                    <table class=" table table-hover table-bordered">
+                        <h3>Guest Lecturer</h3>
+
+                        @{
+                            string cmd6 = "select * from stafflist where designation='Guest Lecturer'";
+                            DBmanager db6 = new DBmanager();
+                            DataTable dt6 = db.GetAllRecords(cmd6);
+                            if (dt6.Rows.Count > 0)
+                            {
+                                for (int i = 0; i < dt6.Rows.Count; i++)
+                                {
+                                    <tr style="font-family:Bahnschrift;font-style:italic;text-transform:uppercase">
+
+                                        <td>@dt6.Rows[i]["name"]</td>
+
+
+
+
+                                    </tr>
+                                }
+                            }
+                            else
+                            {
+                                <span>If the posts are vacant in any department then arrangement is made by appointing the guest lecturers for the duration of one year on temporary basis against the vacant post.</span>
+}
+
+                        }
+
+
+
+                    </table>
+                </div>
+
+            </div>
+
+
+
+        </center>
+
+
+        </div>
+
+    </div>
+

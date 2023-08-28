@@ -1,0 +1,169 @@
+﻿@{
+    ViewBag.Title = "committee";
+    Layout = "~/Views/Shared/GeneralMaster.cshtml";
+}
+
+@using System.Data;
+@using System.Data.SqlClient;
+@using timepass.Models;
+
+
+
+
+<div class="container-fluid">
+
+    <div class="row">
+        <center>
+            
+            <div style="min-height: 200px; width: 98%; border-bottom-right-radius: 50px; background-color: white; font-family: 'MV Boli'; border-bottom-left-radius: 50px; box-shadow: 4px 4px 4px 4px grey; border-top-left-radius: 50px; ">
+                <div class="row course" style="background:#3a3b3c;max-height:80px;width:100%;text-align:center;padding:0.5%;margin-top:10px;border-top-left-radius:50px;color:white;margin-left:-10px"><h2><strong><a>COMMITTEE</a></strong></h2></div>
+                <span class="" style="font-size:140%;font-family:Algerian;">
+
+                    <h3 style="font-family:'MV Boli';"><strong>Anti Ragging Committee/Squad and Grievance Redressal Committee</strong></h3>
+
+                    <table class=" table table-hover table-bordered" style="text-align: center; font-family: 'MV Boli';">
+
+                        @{
+                            string cmd = "select * from AntiRaggin";
+                            DBmanager db = new DBmanager();
+                            DataTable dt = db.GetAllRecords(cmd);
+                            if (dt.Rows.Count > 0)
+                            {
+                                <thead>
+
+
+
+
+
+                                </thead>
+                                for (int i = 0; i < dt.Rows.Count; i++)
+                                {
+
+
+                                    <tr style="font-family: Bahnschrift; font-style: italic; text-align: center; font-family: 'MV Boli';">
+
+                                        <td>@dt.Rows[i]["name"]</td>
+
+
+
+                                    </tr>
+                                }
+                            }
+                            else
+                            {
+                                <h2>""NO DATA FOUND""</h2>
+                            }
+                        }
+
+                    </table>
+                    <hr style="height:2px;background:black" />
+                    <h3 style="font-family:'MV Boli';"><strong>Internal Complain Committee for Woman Harassment</strong></h3>
+
+                    <table class=" table table-hover table-bordered" style="text-align: center; font-family: 'MV Boli';">
+
+                        @{
+                            string cmd1 = "select * from WomanHarassment";
+                            DBmanager db1 = new DBmanager();
+                            DataTable dt1 = db.GetAllRecords(cmd1);
+                            if (dt1.Rows.Count > 0)
+                            {
+                                <thead>
+
+
+
+
+                                </thead>
+                                for (int i = 0; i < dt1.Rows.Count; i++)
+                                {
+
+
+                                    <tr style="font-family: Bahnschrift; font-style: italic; text-align: center; font-family: 'MV Boli';">
+
+                                        <td>@dt1.Rows[i]["name"]</td>
+
+
+
+                                    </tr>
+                                }
+                            }
+                            else
+                            {
+                                <h2>""NO DATA FOUND""</h2>
+                            }}
+
+                    </table>
+                    <hr style="height:2px;background:black" />
+
+                    <h3 style="font-family:'MV Boli';"><strong>Committee For SC/ST</strong></h3>
+
+                    <table class=" table table-hover table-bordered" style="text-align: center; font-family: 'MV Boli';">
+                        <thead>
+
+
+
+                        </thead>
+                        @{
+                            string cmd2 = "select * from scst";
+                            DBmanager db2 = new DBmanager();
+                            DataTable dt2 = db.GetAllRecords(cmd2);
+                            if (dt2.Rows.Count > 0)
+                            {
+
+
+                                for (int i = 0; i < dt2.Rows.Count; i++)
+                                {
+
+
+                                    <tr style="font-family: Bahnschrift; font-style: italic; text-align: center; font-family: 'MV Boli';">
+
+                                        <td>@dt2.Rows[i]["name"]</td>
+
+
+
+                                    </tr>
+                                }
+                            }
+                            else
+                            {
+                                <h2>""NO DATA FOUND""</h2>
+                            }}
+
+                    </table>
+                </span>
+            </div>
+        </center>
+    </div>
+
+</div>
+
+
+
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

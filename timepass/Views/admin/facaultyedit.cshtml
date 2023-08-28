@@ -1,0 +1,210 @@
+﻿@{
+    ViewBag.Title = "facaultyedit";
+    Layout = "~/Views/Shared/adminmaster.cshtml";
+}
+
+@using System.Data;
+@using System.Data.SqlClient;
+@using timepass.Models;
+<link href="~/Content/css/font-awesome.min.css" rel="stylesheet" />
+
+
+
+<div class="container-fluid">
+
+    <div class="row">
+        <center>
+            <div style="min-height: 200px; width: 98%; text-align: center; border-bottom-right-radius: 50px; border-top-left-radius: 50px;box-shadow:4PX 4PX 4PX 4PX GREY">
+                <div class="row course" style="background:#3a3b3c;max-height:80px;width:100%;text-align:justify;padding:0.5%;margin-top:10px;border-top-left-radius:50px;color:white;margin-left:0PX;text-align:CENTER"><h2><strong><a>COMMITTEE </a></strong></h2></div>
+                <span class="" style="font-size: 140%;font-family:Algerian;">
+
+                    <h3>Anti Ragging Committee/Squad and Grievance Redressal Committee</h3>
+
+                    <table class=" table table-hover table-bordered" style="text-align:center">
+
+                        @{
+                            string cmd = "select * from AntiRaggin";
+                            DBmanager db = new DBmanager();
+                            DataTable dt = db.GetAllRecords(cmd);
+                            if (dt.Rows.Count > 0)
+                            {
+                                <thead>
+
+                                <th><strong>NAME</strong></th>
+
+
+                                <th><strong>DELETE</strong></th>
+
+                                </thead>
+                                for (int i = 0; i < dt.Rows.Count; i++)
+                                {
+
+
+                                    <tr style="font-family: Bahnschrift; font-style: italic; text-align:center">
+
+                                        <td>@dt.Rows[i]["name"]</td>
+
+
+                                        <td>
+                                            <a href="/Admin/delantiranging?delanti=@dt.Rows[i]["name"]">
+                                                <span class="fa fa-trash"></span>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        }
+
+                    </table>
+                    <div class="stage" style="">
+                        <a class="btn" href="/ADMIN/addantiraging">ADD MRMBER</a>
+                    </div>
+
+
+
+                </span>
+                <span class="" style="font-size:140%;font-family:Algerian;">
+
+                    <h3>Internal Complain Committee for Woman Harassment</h3>
+
+                    <table class=" table table-hover table-bordered" style="text-align:center">
+
+                        @{
+                            string cmd1 = "select * from WomanHarassment";
+                            DBmanager db1 = new DBmanager();
+                            DataTable dt1 = db1.GetAllRecords(cmd1);
+                            if (dt1.Rows.Count > 0)
+                            {
+                                <thead>
+
+                                <th><strong>NAME</strong></th>
+
+
+                                <th><strong>DELETE</strong></th>
+
+                                </thead>
+                                for (int i = 0; i < dt1.Rows.Count; i++)
+                                {
+
+
+                                    <tr style="font-family: Bahnschrift; font-style: italic; text-align:center">
+
+                                        <td>@dt1.Rows[i]["name"]</td>
+
+
+                                        <td>
+                                            <a href="/Admin/delwoman?delwoman=@dt1.Rows[i]["name"]">
+                                                <span class="fa fa-trash"></span>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        }
+
+                    </table>
+                    <div class="stage" style="">
+                        <a class="btn" href="/ADMIN/addwoman">ADD MRMBER</a>
+                    </div>
+
+
+
+                </span>
+                <span class="" style="font-size:140%;font-family:Algerian;">
+
+                    <h3>Committee For SC/ST</h3>
+
+                    <table class=" table table-hover table-bordered" style="text-align:center">
+
+                        @{
+                            string cmd2 = "select * from scst";
+                            DBmanager db2 = new DBmanager();
+                            DataTable dt2 = db2.GetAllRecords(cmd2);
+                            if (dt2.Rows.Count > 0)
+                            {
+                                <thead>
+
+                                <th><strong>NAME</strong></th>
+
+
+                                <th><strong>DELETE</strong></th>
+
+                                </thead>
+                                for (int i = 0; i < dt2.Rows.Count; i++)
+                                {
+
+
+                                    <tr style="font-family: Bahnschrift; font-style: italic; text-align:center">
+
+                                        <td>@dt2.Rows[i]["name"]</td>
+
+
+                                        <td>
+                                            <a href="/Admin/delscst?delscst=@dt2.Rows[i]["name"]">
+                                                <span class="fa fa-trash"></span>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        }
+
+                    </table>
+                    <div class="stage" style="margin-bottom:100PX">
+                        <a class="btn" href="/ADMIN/addscst">ADD MRMBER</a>
+                    </div>
+
+
+
+                </span>
+            </div>
+        </center>
+    </div>
+
+</div>
+<style>
+    .btn {
+        font-size: 20px;
+        border: none;
+        outline: none;
+        background: #c38b8b;
+        color: #fff;
+        cursor: pointer;
+        position: relative;
+        z-index: 0;
+        border-radius: 10px;
+    }
+
+        .btn::before {
+            position: absolute;
+            content: "";
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            left: -2px;
+            top: -2px;
+            background: linear-gradient( 124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3 );
+            background-size: 400%;
+            z-index: -1;
+            filter: blur(5px);
+            animation: move 20s linear infinite;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            border-radius: 10px;
+        }
+
+        .btn:hover::before {
+            opacity: 1;
+        }
+
+        .btn::after {
+            z-index: -1;
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #555273;
+            left: 0;
+            top: 0;
+            border-radius: 10px;
+        }
+</style>

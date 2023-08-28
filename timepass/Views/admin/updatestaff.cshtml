@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "updatestaff";
+    Layout = "~/Views/Shared/adminmaster.cshtml";
+}
+<link href="~/Content/css/NOTICE.CSS" rel="stylesheet" />
+<body style="background:linear-gradient(#141e30, #243b55)">
+<div class="login-box">
+    <h2>ADD STAFF</h2>
+    <form action="/admin/updatestaff" method="post">
+        <div class="user-box">
+            <input type="text" name="NAME" value="@ViewBag.NAME" required="" autocomplete="off">
+            <label>NAME</label>
+        </div>
+        <div class="user-box">
+            <input type="text" name="DESIGNATION" value="@ViewBag.DESIGNATION" required="" autocomplete="off">
+            <label>DESIGNATION</label>
+        </div>
+        <div class="user-box">
+            <input type="text" name="QUALIFICATION" value="@ViewBag.QUALIFICATION" required="" autocomplete="off">
+            <label>QUALIFICATION</label>
+        </div>
+        <div class="user-box">
+            <input type="text" name="EMAIL" value="@ViewBag.EMAIL" required="" autocomplete="off">
+            <label>EMAIL</label>
+        </div>
+        <div class="user-box">
+            <input type="hidden" name="sr" value="@ViewBag.SR" required="" autocomplete="off">
+           
+        </div>
+        <input type="submit" class="form-control " value="UPDATE STAFF" style="background-color: #7D0552" />
+    </form>
+</div>
+    </body>

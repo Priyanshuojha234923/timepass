@@ -1,0 +1,89 @@
+﻿@{
+    ViewBag.Title = "viewcontact";
+    Layout = "~/Views/Shared/adminmaster.cshtml";
+}
+
+@using System.Data;
+@using System.Data.SqlClient;
+@using timepass.Models;
+<link href="~/Content/css/font-awesome.min.css" rel="stylesheet" />
+<center>
+    <div class="container-fluid">
+
+        <div class="row">
+            <center>
+               
+                <div style="min-height: 200px; width: 98%; text-align: center; border-bottom-right-radius: 50px; border-top-left-radius: 50px;box-shadow:4px 4px 4px 4px grey ">
+                    <div class="row course" style="background:#3a3b3c;max-height:80px;text-align:center;padding:0.5%;margin-top:10px;border-top-left-radius:50px;color:white;margin-left:0px;width:100%"><h2><strong><a>List of Messages</a></strong></h2></div>
+                    <div class="table-responsive" style="text-align:center">
+                        <table class=" table table-hover table-bordered">
+                            @{
+                                string cmd = "select * from contactus order by nom desc";
+                                DBmanager db = new DBmanager();
+                                DataTable dt = db.GetAllRecords(cmd);
+                                if (dt.Rows.Count > 0)
+                                {
+
+                                    <thead>
+                                        <tr>
+
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Mobile</th>
+                                            <th>Message</th>
+                                            <th>Date</th>
+                                            <th>Delete</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @for (int i = 0; i < dt.Rows.Count; i++)
+                                        {
+                                            <tr style="font-family:Bahnschrift;font-style:italic">
+
+                                                <td>
+                                                    @dt.Rows[i]["name"]
+                                                </td>
+                                                <td>
+                                                    @dt.Rows[i]["email"]
+                                                </td>
+                                                <td>
+                                                    @dt.Rows[i]["phone"]
+                                                </td>
+                                                <td>
+                                                    @dt.Rows[i]["msg"]
+                                                </td>
+                                                <td>
+                                                    @dt.Rows[i]["cdate"]
+                                                </td>
+                                                <td>
+                                                    <a href="/Admin/DeleteContact?del=@dt.Rows[i]["nom"]">
+                                                        <span class="fa fa-trash"></span>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        }
+
+                                    </tbody>
+
+                                }
+                                else
+                                {
+                                    <h2>No Record Found</h2>
+                                }
+                            }
+                        </table>
+                    </div>
+
+                </div>
+
+
+
+            </center>
+
+
+        </div>
+
+    </div>
+
+</center>

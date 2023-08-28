@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "login";
+    Layout = "~/Views/Shared/GeneralMaster.cshtml";
+}
+
+
+<div class="container">
+    
+<center><div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+    <div class="container" style="">
+        <div class="row justify-content-center" style="text-align:center">
+            <center><h2 style="margin-top:20px;"><strong>Admin Login</strong></h2></center>
+            <hr />
+            <div class="col-12 col-lg-8" style="padding:2%">
+                <div class="card box-shadow mx-auto " style=" border:1px solid grey;box-shadow:4px 4px 4px 3px grey">
+                    <form action="/home/login" method="post" id="fo" style="padding:2%">
+                        <div class="form-group">
+                            <label class="form-control-label" style="font-size:20px"><strong>USERNAME</strong></label>
+                            <input type="text" class="form-control" name="txtname" required autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label" style="font-size:20px"><strong>PASSWORD</strong></label>
+                            <input type="password" class="form-control" name="txtpass" required autocomplete="off">
+                        </div>
+                        <br />
+                        <div class="col-lg-12 loginbttm">
+                            <div class="col-lg-6 login-btm login-text">
+                            </div>
+
+                            <button type="submit" class="btn btn-outline-denger" id="button" style="margin-bottom:20px;background:grey ;color:white">LOGIN</button>
+                           
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div></center>
+    
+</div>
+
+<style>
+    #fo.loginbttm #button:hover {
+        background: green;
+    }
+</style>
+
+

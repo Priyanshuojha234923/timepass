@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "fee";
+    Layout = "~/Views/Shared/GeneralMaster.cshtml";
+}
+@using System.Data;
+@using System.Data.SqlClient;
+@using timepass.Models;
+<div class="container-fluid">
+
+    <div class="row">
+        <center>
+           
+            <div style="min-height: 200px; width: 98%; text-align: center; border-bottom-right-radius: 50px; background-color: white; border-top-left-radius: 50px;box-shadow:4px 4px 4px 4px grey">
+                <div class="row course" style="background:#3a3b3c;max-height:80px;width:100%;text-align:center;padding:0.5%;margin-top:10px;border-top-left-radius:50px;color:white;margin-left:0px"><h2><strong><a>FEE STRUCTURE</a></strong></h2></div>
+                <div class="table-responsive" style=" margin-bottom: 30px;text-align:center">
+                    <table class=" table table-hover table-bordered">
+                        <h4 style="color: black; padding: 5px; font-family: Bahnschrift; font-style: italic"><strong>FEE STRUCTURE FOR DIPLOMA COURSE</strong></h4>
+                </div>
+
+
+                <table class=" table table-hover table-bordered" style="text-align: center; font-family: 'MV Boli';">
+
+                    @{
+                        string cmd = "select * from fee";
+                        DBmanager db = new DBmanager();
+                        DataTable dt = db.GetAllRecords(cmd);
+                        if (dt.Rows.Count > 0)
+                        {
+                            <thead>
+                                <td style=" font-family: Bahnschrift;"><strong>YEAR</strong></td>
+                                <td style=" font-family: Bahnschrift;"><strong>FEE</strong></td>
+                            </thead>
+                            for (int i = 0; i < dt.Rows.Count; i++)
+                            {
+
+
+                <tr style="font-family: Bahnschrift; font-style: italic; text-align: center; font-family: 'MV Boli';">
+
+                    <td>@dt.Rows[i]["year"]</td>
+                    <td>@dt.Rows[i]["fee"]</td>
+
+
+                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <h2>""NO DATA FOUND""</h2>
+                        }
+                    }
+
+                </table>
+
+                </table>
+            </div>
+
+            </div>
+
+

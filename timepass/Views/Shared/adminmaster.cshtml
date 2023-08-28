@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+@using System.Data;
+@using System.Data.SqlClient;
+@using timepass.Models;
+
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="~/Content/css/fontawesome.min.css" rel="stylesheet" />
+    <link href="~/Content/css/fontawesome.css" rel="stylesheet" />
+
+
+    <style>
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        #navbarSupportedContent a {
+            color: white;
+            padding: 15px 15px 15px 15px;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            background-color: #2C3539;
+        }
+
+        .dropdown-menu:hover {
+            background: none;
+        }
+
+        #navbarSupportedContent a:hover {
+            color: red;
+        }
+
+        .dropdown a:hover {
+            background: #2C3539;
+        }
+
+        ul.list li {
+            display: inline;
+            color: white;
+            padding: 1%;
+            justify-content: center;
+        }
+
+            ul.list li a {
+                color: white;
+            }
+
+            ul.list li:hover {
+                color: red;
+            }
+
+            ul.list li a:hover {
+                color: red;
+            }
+
+        ul.social li {
+            display: inline;
+            color: white;
+        }
+
+            ul.social li a {
+                color: white;
+                padding: 1%;
+            }
+
+                ul.social li a i:hover {
+                    color: red;
+                }
+    </style>
+
+<nav class="navbar navbar-expand-lg navbar-light " style="background: #2C3539">
+
+    <div class="container-fluid">
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="col"></div>
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/admin/index"><strong>NOTICE</strong></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <strong>ACADEMICS EDIT</strong>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                        <li><a class="dropdown-item" href="/admin/stafflistedit"><strong>STAFF LIST EDIT</strong></a></li>
+                        <li><a class="dropdown-item" href="/admin/viewfee"><strong>FEE DETAILS</strong></a></li>
+                        <li><a class="dropdown-item" href="/admin/coursesofferededit"><strong>COURSE OFFERED EDIT</strong></a></li>
+                        <li><a class="dropdown-item" href="/admin/facaultyedit"><strong>COMMITTEE EDIT</strong></a></li>
+                        <li><a class="dropdown-item" href="#"><strong>ACADEMIC CALENDER EDIT</strong></a></li>
+                    </ul>
+                </li>
+                                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/admin/MANDATORYDISCLOSUREEDIT"><strong>MANDATORY DISCLOSURE EDIT</strong></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/admin/viewlogin"><strong>VIEW LOGIN</strong></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/admin/viewfeedback"><strong>VIEW FEEDBACK</strong></a>
+                </li>
+                >
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/admin/viewcontact"><strong>VIEW MESSEGES</strong></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/admin/GALLERY"><strong>GALLERY</strong></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/admin/ULOGIN"><strong>UPDATE LOGIN</strong></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/admin/logout"><strong>LOGOUT</strong></a>
+                </li>
+
+
+            </ul>
+
+        </div>
+        <div class="col"></div>
+
+    </div>
+</nav>
+<div style="min-height:450px ;">
+    @RenderBody()
+</div>
+
+
+

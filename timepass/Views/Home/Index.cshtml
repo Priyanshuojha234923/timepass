@@ -1,0 +1,461 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/GeneralMaster.cshtml";
+}
+
+@using System.Data;
+@using System.Data.SqlClient;
+@using timepass.Models;
+<div class="container-fluid" style="font-family: 'Lucida Calligraphy'; ">
+    <div class="row" style="margin-top:30px">
+
+
+
+        <div class="col-lg-9 col-sm-12">
+
+            <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="/content/image/34.jpg" class="d-block w-100" alt="..."style="height:500px;border-radius:20px">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/content/image/22.jpg" class="d-block w-100" alt="..." style="height: 500px; border-radius: 20px">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/content/image/11.jpg" class="d-block w-100" alt="..." style="height: 500px; border-radius: 20px">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/content/image/4.jpeg" class="d-block w-100" alt="..." style="height: 500px; border-radius: 20px">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/content/image/clg4.jpg" class="d-block w-100" alt="..." style="height: 500px; border-radius: 20px">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/content/image/clg5.jpg" class="d-block w-100" alt="..." style="height: 500px; border-radius: 20px">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+                <div class="col-lg-3 col-sm-12">
+            <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12" style="padding:2%;border-radius:30px">
+                <div class=" box-shadow " style=" width: 100%; height: 490px; border: 3px solid grey; font-family: algerian; background-color: #C0C0C0">
+                    <div style=" color: black; padding: 10PX; font-size: 24PX; font-family: Algerian; border-radius: 30px">
+                        <span>
+                            <center><strong>News &amp; Announcements</strong></center>
+                            <hr style="height:2px">
+                        </span>
+                    </div>
+                                        <marquee style="height:390px;width:100%; color:black;font-size:18px;cursor:pointer"scrollingdelay= behaviour="alternate" direction="up" onmouseover="stop()" onmouseout="start()">
+
+    @{
+    string cmd = "select * from notice order by nn desc";
+    DBmanager db = new DBmanager();
+    DataTable dt = db.GetAllRecords(cmd);
+
+    if (dt.Rows.Count > 0)
+    {
+        for (int i = 0; i < dt.Rows.Count; i++)
+        {
+            <center>
+                @dt.Rows[i]["NOTICEDATE"]
+                <br />
+                <a href="/content/notice/@dt.Rows[i]["NOTICE"]" style="text-decoration:none;text-transform:uppercase"> @dt.Rows[i]["NOTICETYPE"] </a>
+                <hr />
+            </center>
+
+        }
+    }
+    else
+    {
+           <center><h6>
+    ""Currently no latest news is available.""
+</h6></center>
+        }
+    }
+
+</marquee>
+                 
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+<center><div class="row box-shadow" style="width: 96%; margin-top: 30px; border: 1px solid #848B79;border-radius:50px">
+            <h2 style="margin-top:20px;"><strong>PRINCIPAL MESSAGE</strong></h2>
+ 
+    <div class="col-lg-1 col-sm-12"></div>
+    <div class="col-lg-3 col-sm-12" style="margin-top:30px">
+
+        <div class="col-lg-12 col-sm-12"align="center">
+            <img src="~/Content/image/principal.jpeg" style="height: 350px; width: 250px; border: 5px solid #E9AB17; padding: 3%; " />
+            <h5 style="margin-top:20px"><strong>Shri P. C. Verma</strong></h5>
+
+        </div>
+
+    </div>
+    <div class="col-lg-7 col-sm-12" style="margin-top: 70px; text-align: justify">
+        <span  style="font-size:140%;font-family:'Cambria Math';">
+            Dear All, Welcome to Government Polytechnic Premdhar Patti, Pratapgarh. This is one of the best institute under Board of Technical Education, Uttar Pradesh which imparts training of diploma level in Computer Science & Engineering, Electrical Engineering, and Civil Enginnering with intake of 60 in each branch. It was established in 2014 by the State Government of Uttar pradesh cater the technical center in order to acquaint our student and staff with the changing trends of technology. The institute have well experienced faculty in different disciplines.
+        </span>
+
+
+        <div class="stage" align="center" style="margin-top:20px">
+            <a class="btn" href="/HOME/PRINCIPAL">VIEW MORE</a>
+
+        </div>
+
+    </div>
+    <div class="col-lg-1 col-sm-12"></div>
+</div>
+</center>
+</div>
+<div class="container-fluid ">
+
+
+    <div class="row py-5">
+       
+        
+        <div class="col-lg-3 col-sm-3 col-md-3 col-xs-12">
+
+         
+        </div>
+        <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+            <div class="container" style="">
+                <div class="row justify-content-center" style="font-family:'MV Boli';text-align:center">
+                    <center><h2 style="margin-top:20px;"><strong>OUR MENTOR</strong></h2></center>
+                    <hr />
+
+                    <div class="col-12 col-lg-4" style="padding:1%">
+                        <div class="card box-shadow mx-auto " style="width: 90%; border: 3PX solid grey">
+                            <img src="~/Content/image/governor.jpg" class="card-img-top" />
+
+                            <div class="card-body">
+                                <h5 class="card-title">Smt. Anandiben Patel</h5>
+                                <hr>
+                                <p class="card-text">
+                                    Hon'ble Governor<br /> of<br />
+                                    Uttar Pradesh
+                                  
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4" style="padding:1%">
+                        <div class="card box-shadow mx-auto " style="width: 90%; border: 3PX solid grey">
+                            <img src="~/Content/image/cm.jpg" class="card-img-top" />
+
+                            <div class="card-body">
+                                <h5 class="card-title">Shri Yogi Adityanath</h5>
+                                <hr>
+                                <p class="card-text">
+                                    Hon’ble Chief Minister of
+                                    Uttar Pradesh
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4" style="padding:1%">
+                        <div class="card box-shadow mx-auto " style="width: 90%; border: 3PX solid grey">
+                            <img src="~/Content/image/ashishpatel.jpg" class="card-img-top" />
+                            <div class="card-body">
+                                <h5 class="card-title">Shri Ashish Patel</h5>
+                                <hr>
+                                <p class="card-text">Hon'ble Minister for Technical Education, U.P.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-sm-3 col-md-3 col-xs-12">
+
+         
+        </div>
+
+
+
+
+
+    </div>
+
+
+
+
+</div>
+ 
+
+    <div class="container-fluid" style="font-family: 'Lucida Calligraphy'; text-align: center;">
+        <div class="row">
+            <h2 style="margin-top:20px;"><strong>Academic &amp; Allied Department</strong></h2>
+       <hr />
+         
+              <div class="col-lg-4 col-sm-12" style=" padding: 1%">
+                  <a href="~/home/cse">
+                      <div class="card box-shadow" style="width: 96%; border: 2px solid grey; background-color: #36454F; border-radius: 30px ">
+                          <img src="~/Content/image/imd3.png" style="height: 150px; width: 150px; float: left" />
+                          <h4 style="margin-top: 50px; color: white"><strong>Computer Science &amp; Engineering</strong></h4>
+                      </div>
+                  </a>
+</div>
+          
+               <div class="col-lg-4 col-sm-12" style=" padding:1%;">
+
+                   <a href="~/home/civil">
+                       <div class="card box-shadow" style="width: 96%; border: 2px solid grey; background-color: #36454F; border-radius: 30px ">
+                           <img src="~/Content/image/mid.png" style="height: 150px; width: 150px; float: left" />
+                           <h4 style="margin-top:65px;color:white"> <strong> Civil Engineering</strong></h4>
+                       </div>
+                   </a>
+</div>
+          
+        
+              <div class="col-lg-4 col-sm-12" style=" padding: 1%">
+                  <a href="~/home/ee">
+                      <div class="card box-shadow" style="width: 96%; border: 2px solid grey; background-color: #36454F; border-radius: 30px ">
+                          <img src="~/Content/image/imd.png" style="height: 150px; width: 150px; float: left" />
+                          <h4 style="margin-top: 65px; color: white"><strong>Electrical Engineering</strong></h4>
+                      </div>
+                  </a>
+</div>
+         
+          
+         
+        </div>
+       
+     <center><div class="row box-shadow" style="margin-top: 40px;width: 96%; border: 1px solid #848B79;border-radius:50px">
+    <h2 style="margin-top:20px;"><strong>COLLEGE LIFE</strong></h2>
+
+   <div>
+       <div class="row" style="padding:20px">
+           <div class="col-md-4 mt-3 col-lg-3 box-shadow">
+               <a target="_blank" href="~/Content/image/a1.jpg">
+                   <img src="~/Content/image/a1.jpg" class="img-fluid" alt="image" style="height: 200px; width: 330px">
+                   </a>
+           </div>
+           <div class="col-md-4 mt-3 col-lg-3 box-shadow">
+               <a target="_blank" href="~/Content/image/a2.jpg">
+                   <img src="~/Content/image/a2.jpg" class="img-fluid" alt="image" style="height: 200px; width: 330px">
+               </a>
+           </div>
+           <div class="col-md-4 mt-3 col-lg-3 box-shadow">
+               <a target="_blank" href="~/Content/image/a3.jpg">
+                   <img src="~/Content/image/a3.jpg" class="img-fluid" alt="image" style="height: 200px; width: 330px">
+               </a>
+           </div>
+           <div class="col-md-4 mt-3 col-lg-3 box-shadow">
+               <a target="_blank" href="~/Content/image/a3.jpg">
+                   <img src="~/Content/image/a3.jpg" class="img-fluid" alt="image" style="height: 200px; width: 330px">
+               </a>
+           </div>
+
+       </div>
+   </div>
+    <div class="stage" style="margin:10px">
+        <a class="btn" href="/home/gallery">VIEW MORE</a>
+
+    </div>
+</div></center>
+</div>
+
+
+  
+
+   
+<style>
+    a {
+        cursor: pointer;
+    }
+
+
+
+    .box-shadow {
+        -webkit-box-shadow: 0 1px 1px rgba(72,78,85,.6);
+        box-shadow: 0 1px 1px rgba(72,78,85,.6);
+        -webkit-transition: all .2s ease-out;
+        -moz-transition: all .2s ease-out;
+        -ms-transition: all .2s ease-out;
+        -o-transition: all .2s ease-out;
+        transition: all .2s ease-out;
+       
+    }
+
+        .box-shadow:hover {
+            -webkit-box-shadow: 0 20px 40px rgba(72,78,85,.6);
+            box-shadow: 0 20px 40px rgba(72,78,85,.6);
+            -webkit-transform: translateY(-15px);
+            -moz-transform: translateY(-15px);
+            -ms-transform: translateY(-15px);
+            -o-transform: translateY(-15px);
+            transform: translateY(-15px);
+        }
+
+    .card {
+       display:inline-block
+    }
+
+        .card img {
+         
+        }
+
+        .card svg {
+            position: absolute;
+            top: 19rem;
+            -webkit-transition: all .2s ease-out;
+            -moz-transition: all .2s ease-out;
+            -ms-transition: all .2s ease-out;
+            -o-transition: all .2s ease-out;
+            transition: all .2s ease-out;
+            filter: drop-shadow(2px -9px 4px rgba(0, 69, 134, 0.2));
+        }
+
+        .card:hover svg {
+            filter: drop-shadow(2px -9px 4px rgba(0, 69, 134, 0.4));
+        }
+
+
+
+    .card:hover i {
+        transform: rotate(-180deg);
+    }
+
+
+    .btn {
+        font-size: 20px;
+        border: none;
+        outline: none;
+        background: #c38b8b;
+        color: #fff;
+        cursor: pointer;
+        position: relative;
+        z-index: 0;
+        border-radius: 10px;
+    }
+
+    .btn::before {
+        position: absolute;
+        content: "";
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+        left: -2px;
+        top: -2px;
+        background: linear-gradient( 124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3 );
+        background-size: 400%;
+        z-index: -1;
+        filter: blur(5px);
+        animation: move 20s linear infinite;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+        border-radius: 10px;
+    }
+
+    .btn:hover::before {
+        opacity: 1;
+    }
+
+    .btn::after {
+        z-index: -1;
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #555273;
+        left: 0;
+        top: 0;
+        border-radius: 10px;
+    }
+    .container-gallery {
+        width: 100%;
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-perspective: 1000;
+        perspective: 1000;
+        position: relative;
+    }
+
+    .popup {
+        width: 250px;
+        margin: 0 -25px;
+        position: relative;
+        box-shadow: 0px 0px 40px -5px rgba(0, 0, 0, 0.5);
+        background-size: cover;
+        background-position: center;
+        border-radius: 5px;
+        -webkit-transition: .2s;
+        transition: .2s;
+        cursor: pointer;
+    }
+
+        .popup:hover {
+            -webkit-transition: .2s;
+            transition: .2s;
+            -webkit-transform: translateZ(5px) translateY(-20px) scale(1.05);
+            transform: translateZ(5px) translateY(-20px) scale(1.05);
+        }
+
+    .popup-1,
+    .popup-4 {
+        -webkit-transform: translateZ(1px);
+        transform: translateZ(1px);
+    }
+
+    .popup-2,
+    .popup-5 {
+        -webkit-transform: translateZ(2px) translateY(-5px);
+        transform: translateZ(2px) translateY(-5px);
+    }
+
+    .popup-3 {
+        -webkit-transform: translateZ(3px) translateY(-10px);
+        transform: translateZ(3px) translateY(-10px);
+    }
+
+    .popup-1:hover ~ .popup-2 {
+        -webkit-transform: translateZ(4px) translateY(-15px);
+        transform: translateZ(4px) translateY(-15px);
+        -webkit-transition: .2s;
+        transition: .2s;
+    }
+
+    .popup-4 {
+        -webkit-box-ordinal-group: 6;
+        -ms-flex-order: 5;
+        order: 5;
+    }
+
+        .popup-4:hover ~ .popup-5 {
+            -webkit-transform: translateZ(3px) translateY(-15px);
+            transform: translateZ(3px) translateY(-15px);
+            -webkit-transition: .1s;
+            transition: .1s;
+        }
+
+    </style >
+
+
+<!------code for about my portal------>
+
+
+<!------end code for about my portal------>
+

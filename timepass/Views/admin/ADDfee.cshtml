@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "ADDfee";
+    Layout = "~/Views/Shared/adminmaster.cshtml";
+}
+<link href="~/Content/css/NOTICE.CSS" rel="stylesheet" />
+<body style="background:linear-gradient(#141e30, #243b55)">
+    <div class="login-box">
+        <h2>ADD FEE DEATAILS</h2>
+        <form action="/admin/addfee" method="post" enctype="multipart/form-data">
+            <div class="user-box">
+                <input type="text" name="year" required="" autocomplete="off">
+                <label>YEAR</label>
+            </div>
+            <div class="user-box">
+                <input type="text" name="fee" required="" autocomplete="off">
+                <label>FEE</label>
+            </div>
+            <input type="submit" class="form-control " value="ADD FEE" style="background-color: #7D0552" />
+        </form>
+    </div>
+</body>
